@@ -5,5 +5,10 @@
 [![codecov.io](https://codecov.io/github/Arquisoft/Voting_1a/coverage.svg?branch=master)](https://codecov.io/github/Arquisoft/Voting_1a?branch=master)
 
 
+## Authors
+
+* Pablo Blanco Pacho
+* Jairo Montes Presa
+* Carlos Villa Blanco
 
 
