@@ -1,0 +1,9 @@
+language: java
+jdk:
+- oraclejdk8
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+addons:
+  sauce_connect:
+    username: "carlvilla"
+    access_key: "0233acf3-4700-42f6-90e9-761227147d49"
