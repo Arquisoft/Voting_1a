@@ -76,7 +76,7 @@ public class JdbcPersistenceSupplier implements IPersistenceSupplier {
 			int porcentaje = (votantes * 100) / censados;
 			return porcentaje;
 		} catch (Throwable t) {
-			t.printStackTrace();
+			//t.printStackTrace();
 			return 0;
 		}
 	}
