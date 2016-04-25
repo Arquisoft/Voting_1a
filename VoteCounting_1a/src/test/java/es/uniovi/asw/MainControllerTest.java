@@ -111,7 +111,7 @@ public class MainControllerTest {
 				
 			
 			}
-		assertTrue(votosOviedo == 4 ||true;
+		assertTrue(votosOviedo == 4 ||true);
 		assertTrue(votosGijon == 4 ||true);
 		assertTrue(votosSevilla == 4 ||true);
 		assertTrue(votosMadrid == 4 ||true);
