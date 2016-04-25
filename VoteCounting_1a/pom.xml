@@ -7,6 +7,11 @@
 	<artifactId>VoteCounting_1a</artifactId>
 	<name>VoteCounting_1a</name>
 	<version>0.0.1</version>
+	
+	<scope>system</scope>
+	<systemPath>${project.basedir}/lib/hsqldb.jar</systemPath>
+	<systemPath>${project.basedir}/lib/jcorlib.jar</systemPath>	
+	<systemPath>${project.basedir}/lib/sqljdbc42.jar</systemPath>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
