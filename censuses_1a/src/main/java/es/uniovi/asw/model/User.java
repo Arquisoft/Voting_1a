@@ -16,7 +16,7 @@ public class User {
 	private String NIF;
 	private String email;
 	private int codigoMesa;
-	private String contraseña;
+	private String password;
 
 	User() {
 
@@ -90,7 +90,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", NIF=" + NIF + ", email=" + email + ", codigoMesa=" + codigoMesa
-				+ ", contraseña=" + contraseña + "]";
+				+ ", contraseña=" + password + "]";
 	}
 
 	public Long getId(){
@@ -98,11 +98,11 @@ public class User {
 	}
 
 	public String getContraseña() {
-		return contraseña;
+		return password;
 	}
 
 	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+		this.password = contraseña;
 	}
 
 }
