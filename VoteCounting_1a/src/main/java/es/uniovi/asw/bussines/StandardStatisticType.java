@@ -1,8 +1,8 @@
-package main.java.es.uniovi.asw.bussines;
+package es.uniovi.asw.bussines;
 
 import java.util.List;
 
-import main.java.es.uniovi.asw.persistence.IPersistenceSupplier;
+import es.uniovi.asw.persistence.IPersistenceSupplier;
 import util.IDictionary;
 import util.KeyValuePair;
 

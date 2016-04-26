@@ -1,4 +1,4 @@
-package main.java.es.uniovi.asw.ui;
+package es.uniovi.asw.ui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -10,11 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import main.java.es.uniovi.asw.bussines.CountingSystem;
-import main.java.es.uniovi.asw.bussines.DirectCountType;
-import main.java.es.uniovi.asw.bussines.StandardStatisticType;
-import main.java.es.uniovi.asw.bussines.StatisticsSystem;
-import main.java.es.uniovi.asw.persistence.JdbcPersistenceSupplier;
+import es.uniovi.asw.bussines.CountingSystem;
+import es.uniovi.asw.bussines.DirectCountType;
+import es.uniovi.asw.bussines.StandardStatisticType;
+import es.uniovi.asw.bussines.StatisticsSystem;
+import es.uniovi.asw.persistence.JdbcPersistenceSupplier;
 
 public class MainWindow extends JFrame {
 

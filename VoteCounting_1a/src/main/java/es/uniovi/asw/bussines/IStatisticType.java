@@ -1,4 +1,4 @@
-package main.java.es.uniovi.asw.bussines;
+package es.uniovi.asw.bussines;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package main.java.es.uniovi.asw.persistence;
+package es.uniovi.asw.persistence;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class JdbcPersistenceSupplier implements IPersistenceSupplier {
 		try {
 			conexion = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost", "SA", "");
 		} catch (SQLException e) {
-			System.err.println("No ha sido posible establecer la conexi�n con la base de datos.");
+			System.err.println("No ha sido posible establecer la conexión con la base de datos.");
 		}
 	}
 
@@ -44,7 +44,6 @@ public class JdbcPersistenceSupplier implements IPersistenceSupplier {
 			Statement st = conexion.createStatement();
 			ResultSet rs = st.executeQuery("select o.opcion , l.ciudad , v.numvotos"
 					+ " from TOPCIONES o , TVOTOS v , TLUGARES l" + " where o.id = v.idopcion and v.idlugar = l.id;");
-
 			List<IDictionary<KeyValuePair<String, String>, Integer>> estadisticas = new ArrayList<>();
 			while (rs.next()) {
 				String opcion = rs.getString(1);

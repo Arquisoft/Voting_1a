@@ -1,7 +1,8 @@
-package test.java.es.uniovi.asw;
+package es.uniovi.asw;
 
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -21,12 +22,11 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import main.java.es.uniovi.asw.Application;
-import main.java.es.uniovi.asw.bussines.CountingSystem;
-import main.java.es.uniovi.asw.bussines.DirectCountType;
-import main.java.es.uniovi.asw.bussines.StandardStatisticType;
-import main.java.es.uniovi.asw.bussines.StatisticsSystem;
-import main.java.es.uniovi.asw.persistence.JdbcPersistenceSupplier;
+import es.uniovi.asw.bussines.CountingSystem;
+import es.uniovi.asw.bussines.DirectCountType;
+import es.uniovi.asw.bussines.StandardStatisticType;
+import es.uniovi.asw.bussines.StatisticsSystem;
+import es.uniovi.asw.persistence.JdbcPersistenceSupplier;
 import util.IDictionary;
 import util.KeyValuePair;
 

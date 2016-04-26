@@ -1,4 +1,4 @@
-package main.java.es.uniovi.asw.persistence;
+package es.uniovi.asw.persistence;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

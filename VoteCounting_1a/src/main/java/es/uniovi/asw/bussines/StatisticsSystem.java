@@ -1,12 +1,12 @@
-package main.java.es.uniovi.asw.bussines;
+package es.uniovi.asw.bussines;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.es.uniovi.asw.persistence.FakePersistenceSupplier;
-import main.java.es.uniovi.asw.persistence.IPersistenceSupplier;
-import main.java.es.uniovi.asw.persistence.SQLServerBridge;
+import es.uniovi.asw.persistence.FakePersistenceSupplier;
+import es.uniovi.asw.persistence.IPersistenceSupplier;
+import es.uniovi.asw.persistence.SQLServerBridge;
 import util.IDictionary;
 import util.KeyValuePair;
 
