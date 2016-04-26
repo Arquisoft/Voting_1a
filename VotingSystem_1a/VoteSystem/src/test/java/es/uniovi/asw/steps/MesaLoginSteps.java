@@ -23,12 +23,15 @@ public class MesaLoginSteps{
 	public void i_m_a_member_of_the_polling_station_and_on_the_loginMesa_xhtml_page() throws Throwable {
 		gs.establecerDriver("Mesa login Test");
 		gs.driver.get("localhost:8080");
-		gs.driver.findElement(By.linkText("Acceso Mesa Electoral")).click();
+		SeleniumUtils.esperaCargaPagina(gs.driver, "id", "form-acceso:btnMesa", 5);
+		SeleniumUtils.driver.findElement(By.id("form-acceso:btnMesa")).click();
 	}
 	
 	@Then("^I fill the ID field writing \"([^\"]*)\"$")
 	public void i_fill_the_ID_field_writing(String arg1) throws Throwable {
 		SeleniumUtils.esperaCargaPagina(gs.driver, "id", "form-login:name", 12);
+		gs.driver.findElement(By.id("form-login:name")).click();
+		gs.driver.findElement(By.id("form-login:name")).clear();
 		gs.driver.findElement(By.id("form-login:name")).sendKeys(String.valueOf(arg1));
 	}
 

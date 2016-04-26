@@ -25,7 +25,8 @@ public class MesaVoteSteps {
 	public void i_m_a_member_of_the_polling_station_and_I_have_logged_in() throws Throwable {
 		gs.establecerDriver("Mesa Vote Test");	
 		gs.driver.get("localhost:8080");
-		gs.driver.findElement(By.linkText("Acceso Mesa Electoral")).click();
+		SeleniumUtils.esperaCargaPagina(gs.driver, "id", "form-acceso:btnMesa", 5);
+		SeleniumUtils.driver.findElement(By.id("form-acceso:btnMesa")).click();
 		SeleniumUtils.esperaCargaPaginaSteps("id", "form-login:name", 12);
 		SeleniumUtils.driver.findElement(By.id("form-login:name")).sendKeys("1");
 		SeleniumUtils.driver.findElement(By.id("form-login:password")).sendKeys("pas1");

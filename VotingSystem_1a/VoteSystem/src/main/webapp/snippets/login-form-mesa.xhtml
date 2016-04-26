@@ -4,6 +4,20 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 
+
+<p:menubar>
+	
+	
+	  <f:facet name="options">
+	  	<h:form id="form-acceso">
+            <p:commandButton id="btnUsuario" action="login.xhtml" icon="ui-icon-extlink" value="Acceso Votantes" />
+             
+      	</h:form>
+      </f:facet>     
+   
+	
+	</p:menubar>
+
 	<p:panel id="panelLogin" header="Iniciar Sesion">
 		<h:form id="form-login">
 			<p:panelGrid id="Grid" columns="2" cellpadding="5">
@@ -31,10 +45,13 @@
 
 
 			</p:panelGrid>
+			
+			
+			
 		</h:form>
 
-		<h:form>
-			<p:commandLink action="login.xhtml" style="float:right">Acceso Votantes</p:commandLink>
-		</h:form>
+
 	</p:panel>
+	
+
 </ui:composition>
