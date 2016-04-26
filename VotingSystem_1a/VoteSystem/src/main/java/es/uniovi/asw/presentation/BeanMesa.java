@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.jsf.FacesContextUtils;
 
+import es.uniovi.asw.business.MesaService;
 import es.uniovi.asw.business.impl.SimpleMesaService;
 import es.uniovi.asw.model.LugarVoto;
 import es.uniovi.asw.model.User;
@@ -33,7 +34,7 @@ public class BeanMesa implements Serializable{
 	public String verifyUser() {
 
 		WebApplicationContext ctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
-		SimpleMesaService mesaService = ctx.getBean(SimpleMesaService.class);
+		MesaService mesaService = ctx.getBean(SimpleMesaService.class);
 
 		boolean yaVoto = mesaService.comprobarUsuario(dniUsuario);
 

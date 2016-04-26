@@ -11,6 +11,7 @@ import javax.faces.context.FacesContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.jsf.FacesContextUtils;
 
+import es.uniovi.asw.business.LoginMesaService;
 import es.uniovi.asw.business.impl.SimpleLoginMesaService;
 import es.uniovi.asw.model.LugarVoto;
 
@@ -45,7 +46,7 @@ public class BeanLoginMesa implements Serializable {
 
 	public String verify() {
 		WebApplicationContext ctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());
-		SimpleLoginMesaService login = ctx.getBean(SimpleLoginMesaService.class);
+		LoginMesaService login = ctx.getBean(SimpleLoginMesaService.class);
 
 		LugarVoto mesa = login.verify(id, password);
 		if (mesa != null) {

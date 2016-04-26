@@ -12,6 +12,9 @@ import javax.faces.context.FacesContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.jsf.FacesContextUtils;
 
+import es.uniovi.asw.business.ConfiguracionService;
+import es.uniovi.asw.business.OptionVoteService;
+import es.uniovi.asw.business.VoteService;
 import es.uniovi.asw.business.impl.SimpleConfiguracionService;
 import es.uniovi.asw.business.impl.SimpleOptionVoteService;
 import es.uniovi.asw.business.impl.SimpleVoteService;
@@ -43,11 +46,12 @@ public class BeanVoto implements Serializable {
 	public String votar(OpcionVoto opcion) {
 		WebApplicationContext ctx = FacesContextUtils
 				.getWebApplicationContext(FacesContext.getCurrentInstance());
-		SimpleVoteService vote = ctx.getBean(SimpleVoteService.class);
+		VoteService vote = ctx.getBean(SimpleVoteService.class);
 
 		WebApplicationContext ctx1 = FacesContextUtils
 				.getWebApplicationContext(FacesContext.getCurrentInstance());
-		SimpleConfiguracionService config = ctx1.getBean(SimpleConfiguracionService.class);
+		
+		ConfiguracionService config = ctx1.getBean(SimpleConfiguracionService.class);
 
 		Configuracion c = config.getConf();
 		String s = getFecha(c.getFecha().toString());
@@ -74,7 +78,7 @@ public class BeanVoto implements Serializable {
 	public void opcionesVoto() {
 		WebApplicationContext ctx = FacesContextUtils
 				.getWebApplicationContext(FacesContext.getCurrentInstance());
-		SimpleOptionVoteService vote = ctx.getBean(SimpleOptionVoteService.class);
+		OptionVoteService vote = ctx.getBean(SimpleOptionVoteService.class);
 
 		votos = (OpcionVoto[]) vote.getAllVoteOptions().toArray(new OpcionVoto[0]);
 	}

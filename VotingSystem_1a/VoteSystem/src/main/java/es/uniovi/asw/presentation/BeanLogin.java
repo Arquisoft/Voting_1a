@@ -14,6 +14,8 @@ import javax.faces.context.FacesContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.jsf.FacesContextUtils;
 
+import es.uniovi.asw.business.ConfiguracionService;
+import es.uniovi.asw.business.LoginService;
 import es.uniovi.asw.business.impl.SimpleConfiguracionService;
 import es.uniovi.asw.business.impl.SimpleLoginService;
 import es.uniovi.asw.model.Configuracion;
@@ -48,11 +50,12 @@ public class BeanLogin implements Serializable {
 		WebApplicationContext ctx = FacesContextUtils
 				.getWebApplicationContext(FacesContext.getCurrentInstance());
 
-		SimpleLoginService login = ctx.getBean(SimpleLoginService.class);
+		LoginService login = ctx.getBean(SimpleLoginService.class);
 
 		WebApplicationContext ctx1 = FacesContextUtils
 				.getWebApplicationContext(FacesContext.getCurrentInstance());
-		SimpleConfiguracionService config = ctx1
+		
+		ConfiguracionService config = ctx1
 				.getBean(SimpleConfiguracionService.class);
 
 		Configuracion c = config.getConf();
