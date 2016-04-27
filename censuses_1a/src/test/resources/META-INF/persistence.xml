@@ -10,6 +10,10 @@
 		
 			
 		<class>es.uniovi.asw.model.User</class>
+		
+		<class>es.uniovi.asw.model.Votante</class>
+		<class>es.uniovi.asw.model.Voto</class>
+		
 			
 		
 		<properties>
