@@ -7,3 +7,12 @@ addons:
   sauce_connect:
     username: "carlvilla"
     access_key: "0233acf3-4700-42f6-90e9-761227147d49"
+    
+notifications:
+  email:
+    recipients:
+      - uo236851@uniovi.es
+      - uo232391@uniovi.es
+    on_success: never
+    on_failure: always
+    
