@@ -5,6 +5,8 @@
 [![codecov.io](https://codecov.io/github/Arquisoft/Voting_1a/coverage.svg?branch=master)](https://codecov.io/github/Arquisoft/Voting_1a?branch=master)
 
 
+# Descripcion en proceso, obviar temporalmente el siguiente contenido
+
 ## Descripción
 Sistema de votación que permite la administración de elecciones y que los usuarios puedan votar online. Este proyecto está divido en 2 módulos:
 
