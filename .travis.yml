@@ -12,6 +12,7 @@ notifications:
   email:
     recipients:
       - uo236851@uniovi.es
+      - uo232391@uniovi.es
     on_success: never
     on_failure: always
     
