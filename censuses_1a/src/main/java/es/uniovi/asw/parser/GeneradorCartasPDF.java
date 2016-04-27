@@ -1,5 +1,6 @@
 package es.uniovi.asw.parser;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
@@ -18,7 +19,12 @@ public class GeneradorCartasPDF implements GeneradorCartas {
 		String contraseña = GeneradorPasswords.getGeneradorPasswords().generarContraseña();
 		
 		FileOutputStream archivo;
+		
+		File folder = new File("cartas");
 		try {
+			if(!folder.exists()){
+				folder.mkdir();
+			}
 			archivo = new FileOutputStream("cartas/"+email+".pdf");
 
 		      Document documento = new Document();
