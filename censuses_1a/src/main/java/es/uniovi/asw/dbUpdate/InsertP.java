@@ -12,7 +12,9 @@ import es.uniovi.asw.reportWriter.WriteReport;
 
 public class InsertP implements Insert {
 
-	
+	private static final String USERS_DELETE = "delete from User";
+	private static final String VOTANTES_DELETE = "delete from Votante";
+	private static final String VOTES_DELETE = "delete from Voto";
 		
 		@SuppressWarnings({ "unchecked", "finally" })
 		public boolean insertarUsuarios(List<User> usuarios) {
@@ -28,7 +30,7 @@ public class InsertP implements Insert {
 				trx = em.getTransaction();
 				trx.begin();
 			
-
+				borrarBaseDatos(em);
 				
 				for (User usuario : usuarios) {
 					List<User> users = em.createNamedQuery("User.findByNameDni").setParameter(1, usuario.getNIF())
@@ -62,5 +64,11 @@ public class InsertP implements Insert {
 				}
 				return result;
 			}
+		}
+
+		private void borrarBaseDatos(EntityManager em) {
+			em.createQuery(VOTES_DELETE).executeUpdate();
+			em.createQuery(VOTANTES_DELETE).executeUpdate();
+			em.createQuery(USERS_DELETE).executeUpdate();			
 		}
 }
