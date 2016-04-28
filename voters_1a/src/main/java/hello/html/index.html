@@ -1,0 +1,36 @@
+<!doctype HTML>
+
+<html ng-app="voters">
+     <head>
+        <meta charset="UTF-8"/>
+        <title>Sistema de identificación de votantes</title>
+        <script type="text/javascript" src="js/angular.min.js"></script> 
+        <script type="text/javascript" src="js/controller.js"></script> 
+ 	 </head>
+     <body ng-controller="controller">
+         <h1>Identificación de votantes</h1>
+         <form ng-submit="login()">
+             <div>
+                 Email: <input type="text" ng-model="form.email" required/>
+             </div>
+             <div>
+                 Contraseña: <input type="password" ng-model="form.password" required/>
+             </div>
+             <div>
+                 <button type="submit">Comprobar datos</button>
+             </div>
+         </form>
+         <div ng-show="exito">
+             Datos del votante:
+             <ul>
+                 <li>Nombre: {{response.name}}</li>
+                 <li>DNI: {{response.nif}}</li>
+                 <li>Email: {{response.email}}</li>
+                 <li>Mesa electoral: {{response.codigoMesa}}</li>
+             </ul>
+         </div>
+         <div ng-show="fracaso">
+             Los datos introducidos no son válidos
+         </div>
+     </body>
+</html>
