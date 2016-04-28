@@ -83,13 +83,13 @@ public class CountingSystem {
 	 * Recupera, cuenta y devuelve los votos actuales
 	 * @throws SQLException 
 	 */
-	public IDictionary<String, Integer> count() {
+	public CountingSystem count() {
 		List<KeyValuePair<String, Integer>> votos = psupplier.readResults();
 		
 		IDictionary<String, Integer> result = ctype.count(votos);
 		SQLServerBridge.sendVoteCount(result);
 		
-		return result;
+		return this;
 	}
 	
 }

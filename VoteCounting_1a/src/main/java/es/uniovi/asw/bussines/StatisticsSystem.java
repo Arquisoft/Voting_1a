@@ -85,19 +85,19 @@ public class StatisticsSystem {
 	 * Recupera, cuenta y devuelve los votos actuales
 	 * @throws SQLException 
 	 */
-	public List<IDictionary<KeyValuePair<String, String>, Integer>> getEstadisticas() {
+	public StatisticsSystem getEstadisticas() {
 		List<IDictionary<KeyValuePair<String, String>, Integer>> cosas = stype.conjure(this.psupplier);
 		System.out.println("Consigo los datos");
 		SQLServerBridge.sendStatistics(cosas);
 		System.out.println("Envío los datos");
-		return cosas;
+		return this;
 	}
 	
-	public int getParticipacion() {
+	public StatisticsSystem getParticipacion() {
 		int indice = psupplier.readParticipation();
 		SQLServerBridge.sendParticipation(indice);
 		
-		return indice;
+		return this;
 	}
 	
 }
