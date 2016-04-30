@@ -16,7 +16,20 @@ Sistema de votación que permite la administración de elecciones y que los usua
 
 ### Censuses
 
-Para ejecutar censuses blablabla...
+Censuses es una aplicación batch que nos permite cargar en nuestra base de datos el censo.
+
+Para utilizar censuses se debe de especificar el formato de los ficheros de entrada y el formato de las cartas generadas. Las cartas generadas contienen el usuario y la contraseña de los votantes.
+
+Los formatos de ficheros de entrada permitidos son:
+  * -x -> Archivos excel (Formato xls)
+
+Los formatos de ficheros de salida permitidos son:
+  * -t -> Archivo txt
+  * -p -> Archivo pdf
+
+Ejemplo: 
+
+Generar cartas en formato pdf obteniendo los datos de xls: <b>java -jar target/censuses1a-0.0.1.jar Censos.xls -x -p</b>
 
 
 ### Voters
