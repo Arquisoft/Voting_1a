@@ -27,7 +27,8 @@ public class MesaVoteSteps {
 		gs.driver.get("localhost:8080");
 		SeleniumUtils.esperaCargaPagina(gs.driver, "id", "form-acceso:btnMesa", 5);
 		SeleniumUtils.driver.findElement(By.id("form-acceso:btnMesa")).click();
-		SeleniumUtils.esperaCargaPaginaSteps("id", "form-login:name", 12);
+		SeleniumUtils.esperaCargaPaginaSteps("id", "form-login:name", 10);
+		SeleniumUtils.esperaCargaPaginaSteps("id", "form-login:password", 10);
 		SeleniumUtils.driver.findElement(By.id("form-login:name")).sendKeys("1");
 		SeleniumUtils.driver.findElement(By.id("form-login:password")).sendKeys("pas1");
 		SeleniumUtils.driver.findElement(By.id("form-login:login")).click();
