@@ -4,6 +4,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -79,10 +81,10 @@ public class GeneralSteps {
 	public void i_fill_the_Password_field_writing(String arg1) throws Throwable {
 		List<WebElement> pass = SeleniumUtils.esperaCargaPaginaSteps("id","form-login:password", 12);
 		pass.get(0).sendKeys(arg1);
-		
+			
 	}
-
-
+	
+	
 	@Then("^I receive the string \"([^\"]*)\"$")
 	public void i_receive_the_string(String arg1) throws Throwable {
 		SeleniumUtils.esperaCargaPaginaSteps("text", arg1, 12);
