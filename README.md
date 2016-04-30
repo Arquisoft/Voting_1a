@@ -60,7 +60,7 @@ Para ejecutar la base de datos entramos en la carpeta data y ejecutamos el archi
 
 * <a href= "https://github.com/pabloblancoo"> Pablo Blanco Pacho </a>
 * Jairo Montes Presa
-* Carlos Villa Blanco
+* <a href= "https://github.com/carlvilla"> Carlos Villa Blanco </a> 
 * Carlos Lubian
 * Alejandro Rodriguez
 
