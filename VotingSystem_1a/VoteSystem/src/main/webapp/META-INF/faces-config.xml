@@ -8,7 +8,7 @@
 	<managed-bean>
 		<managed-bean-name>login</managed-bean-name>
 		<managed-bean-class>
-			es.uniovi.asw.presentation.BeanLogin
+			es.uniovi.asw.presentation.impl.BeanLoginImpl
 		</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
@@ -16,7 +16,7 @@
 	<managed-bean>
 		<managed-bean-name>loginMesa</managed-bean-name>
 		<managed-bean-class>
-			es.uniovi.asw.presentation.BeanLoginMesa
+			es.uniovi.asw.presentation.impl.BeanLoginMesaImpl
 		</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
@@ -24,7 +24,7 @@
 	<managed-bean>
 		<managed-bean-name>mesa</managed-bean-name>
 		<managed-bean-class>
-			es.uniovi.asw.presentation.BeanMesa
+			es.uniovi.asw.presentation.impl.BeanMesaImpl
 		</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
@@ -32,7 +32,7 @@
 	<managed-bean>
 		<managed-bean-name>voto</managed-bean-name>
 		<managed-bean-class>
-			es.uniovi.asw.presentation.BeanVoto
+			es.uniovi.asw.presentation.impl.BeanVotoImpl
 		</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
