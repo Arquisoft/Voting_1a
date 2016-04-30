@@ -1,18 +1,11 @@
-# Voting System 
+# Voting
 
 [![Build Status](https://travis-ci.org/Arquisoft/Voting_1a.svg?branch=master)](https://travis-ci.org/Arquisoft/Voting_1a) 
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/06365a3e646347f3b1615f93959d6cea)](https://www.codacy.com/app/jelabra/Voting_1a)
 [![codecov.io](https://codecov.io/github/Arquisoft/Voting_1a/coverage.svg?branch=master)](https://codecov.io/github/Arquisoft/Voting_1a?branch=master)
 
 
-# Descripcion en proceso, obviar temporalmente el siguiente contenido
-
-## Descripción
-Sistema de votación que permite la administración de elecciones y que los usuarios puedan votar online. Este proyecto está divido en 2 módulos:
-
-* AdminSystem: permite configurar los parámetros de las elecciones. Estos son las opciones de voto, fecha y localizaciones en los que se puede realizar la votación físicamente. También permite incorporar los votos obtenido en papel.
-
-* VoteSystem: aplicación web en la cual los usuarios podrán realizar las votaciones y donde los miembros de la mesa electoral podrán comunicar aquellos usuarios que realizan la votación en papel.
+# Sistema de votación
 
 ### Censuses
 
@@ -36,8 +29,15 @@ Generar cartas en formato pdf obteniendo los datos de xls: <b>java -jar target/c
 
 Para ejecutar voters blablabla...
 
+### VotingSystem
 
-### AdminSystem
+Sistema de votación que permite la administración de elecciones y que los usuarios puedan votar online. Este proyecto está divido en 2 módulos:
+
+* AdminSystem: permite configurar los parámetros de las elecciones. Estos son las opciones de voto, fecha y localizaciones en los que se puede realizar la votación físicamente. También permite incorporar los votos obtenido en papel.
+
+* VoteSystem: aplicación web en la cual los usuarios podrán realizar las votaciones y donde los miembros de la mesa electoral podrán comunicar aquellos usuarios que realizan la votación en papel.
+
+#### AdminSystem
 
 Para ejecutar la aplicación utilizamos el comando <b>java -jar AdminSystem/target/adminSystem-0.0.1.jar </b> y una las siguientes opciones:
 * Si queremos añadir la configuración del sistema añadimos la opcion <b>conf</b> seguido de la ubicacion de los ficheros y el tipo de fichero que sean, en este orden.
@@ -53,7 +53,8 @@ Ejemplo completo: <b>java -jar AdminSystem/target/adminSystem-0.0.1.jar conf Adm
 Ejemplo completo: <b>java -jar AdminSystem/target/adminSystem-0.0.1.jar count AdminSystem/votes.xls -x</b>
 
 
-### VoteSystem
+
+#### VoteSystem
 
 Para ejecutar la aplicación utilizamos el comando <b>mvn spring-boot:run</b> en la carpeta VoteSystem del proyecto y nos dirigimos a la URI <a href="http://localhost:8080">http://localhost:8080</a> de un navegador. 
 
