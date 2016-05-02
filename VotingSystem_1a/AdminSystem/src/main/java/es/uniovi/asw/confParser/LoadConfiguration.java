@@ -50,16 +50,28 @@ public class LoadConfiguration {
 
 	RVotes rVote = null;
 
-	public static void main(String... args) throws AdminException {
+	public static void main(String... args){
 
-		cargarFactorias();
-		cargarOpciones();
 		LoadConfiguration runner = new LoadConfiguration();
-		runner.run(args);
+		try {
+			runner.run(args);
+		} catch (AdminException e) {
+			runner.errorDatosEntrada();
+			runner.ayudaConfSystem();
+			runner.ayudaCountVotes();
+		}
 
 	}
 
-	void run(String... args) throws AdminException {
+	private void errorDatosEntrada() {
+		System.out.println("\nHa ocurrido un error con los datos introducidos\n");
+		
+	}
+
+	public void run(String... args) throws AdminException {
+		cargarFactorias();
+		cargarOpciones();
+		
 		Options options = new Options();
 		options.addOption("conf", false, "configuration");
 		options.addOption("count", false, "configuration");
