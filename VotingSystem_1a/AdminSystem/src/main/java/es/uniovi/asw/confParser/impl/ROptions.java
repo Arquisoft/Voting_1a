@@ -26,7 +26,7 @@ public class ROptions implements Options{
 		// Recibe una lista o un map de strings
 		List<String> opciones = parser.leerDatos(fichero);
 		// Los formatea correctamente
-
+		opcionesVoto.add(new OpcionVoto("BLANCO"));
 		for (int i = 0; i < opciones.size(); i++) {
 			opcionesVoto.add(new OpcionVoto(opciones.get(i).toUpperCase()));
 		}
