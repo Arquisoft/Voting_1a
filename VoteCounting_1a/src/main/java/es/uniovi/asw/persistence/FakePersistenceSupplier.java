@@ -9,7 +9,7 @@ import util.Dictionary;
 import util.IDictionary;
 import util.KeyValuePair;
 
-public class FakePersistenceSupplier implements IPersistenceSupplier {
+public class FakePersistenceSupplier implements ReadData {
 
 	@Override
 	public List<KeyValuePair<String, Integer>> readResults() {

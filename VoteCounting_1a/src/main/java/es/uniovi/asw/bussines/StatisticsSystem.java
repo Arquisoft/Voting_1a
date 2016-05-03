@@ -4,28 +4,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.uniovi.asw.bussines.implStatistic.StandardStatisticType;
+import es.uniovi.asw.externalPersistence.impl.SQLServerBridge;
 import es.uniovi.asw.persistence.FakePersistenceSupplier;
-import es.uniovi.asw.persistence.IPersistenceSupplier;
-import es.uniovi.asw.persistence.SQLServerBridge;
+import es.uniovi.asw.persistence.ReadData;
 import util.IDictionary;
 import util.KeyValuePair;
 
 public class StatisticsSystem {
 	/* Atributos de la clase */
 	private IStatisticType stype;
-	private IPersistenceSupplier psupplier;
+	private ReadData psupplier;
 
 	/* Clases por defecto para los atributos de la clase */
 	private static final Class<? extends IStatisticType> defaultStatisticType = 
 			StandardStatisticType.class;
-	private static final Class<? extends IPersistenceSupplier> defaultPersistenceSupplier =
+	private static final Class<? extends ReadData> defaultPersistenceSupplier =
 			FakePersistenceSupplier.class;
 
 	/**
 	 * Inicializa un nuevo CountingSystem con un Count Type y Persistence
 	 * Supplier determinados
 	 */
-	public StatisticsSystem(IStatisticType ctype, IPersistenceSupplier psupplier) {
+	public StatisticsSystem(IStatisticType ctype, ReadData psupplier) {
 		this.stype = ctype;
 		this.psupplier = psupplier;
 	}
@@ -61,7 +62,7 @@ public class StatisticsSystem {
 			this.psupplier = defaultPersistenceSupplier.newInstance();
 		// Si falla, crear uno sobre la marcha que no haga nada
 		} catch (Throwable t) {
-			this.psupplier = new IPersistenceSupplier() {
+			this.psupplier = new ReadData() {
 
 				@Override
 				public List<IDictionary<KeyValuePair<String, String>, Integer>> readStatistics() {
@@ -88,14 +89,14 @@ public class StatisticsSystem {
 	public StatisticsSystem getEstadisticas() {
 		List<IDictionary<KeyValuePair<String, String>, Integer>> cosas = stype.conjure(this.psupplier);
 		System.out.println("Consigo los datos");
-		SQLServerBridge.sendStatistics(cosas);
+		new SQLServerBridge().sendStatistics(cosas);
 		System.out.println("Envío los datos");
 		return this;
 	}
 	
 	public StatisticsSystem getParticipacion() {
 		int indice = psupplier.readParticipation();
-		SQLServerBridge.sendParticipation(indice);
+		new SQLServerBridge().sendParticipation(indice);
 		
 		return this;
 	}

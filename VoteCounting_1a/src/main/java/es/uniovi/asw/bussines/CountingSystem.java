@@ -4,9 +4,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.uniovi.asw.bussines.implCountType.DirectCountType;
+import es.uniovi.asw.externalPersistence.impl.SQLServerBridge;
 import es.uniovi.asw.persistence.FakePersistenceSupplier;
-import es.uniovi.asw.persistence.IPersistenceSupplier;
-import es.uniovi.asw.persistence.SQLServerBridge;
+import es.uniovi.asw.persistence.ReadData;
 import util.Dictionary;
 import util.IDictionary;
 import util.KeyValuePair;
@@ -14,19 +15,19 @@ import util.KeyValuePair;
 public class CountingSystem {
 	/* Atributos de la clase */
 	private ICountType ctype;
-	private IPersistenceSupplier psupplier;
+	private ReadData psupplier;
 
 	/* Clases por defecto para los atributos de la clase */
 	private static final Class<? extends ICountType> defaultCountType = 
 			DirectCountType.class;
-	private static final Class<? extends IPersistenceSupplier> defaultPersistenceSupplier =
+	private static final Class<? extends ReadData> defaultPersistenceSupplier =
 			FakePersistenceSupplier.class;
 
 	/**
 	 * Inicializa un nuevo CountingSystem con un Count Type y Persistence
 	 * Supplier determinados
 	 */
-	public CountingSystem(ICountType ctype, IPersistenceSupplier psupplier) {
+	public CountingSystem(ICountType ctype, ReadData psupplier) {
 		this.ctype = ctype;
 		this.psupplier = psupplier;
 	}
@@ -59,7 +60,7 @@ public class CountingSystem {
 			this.psupplier = defaultPersistenceSupplier.newInstance();
 		// Si falla, crear uno sobre la marcha que no haga nada
 		} catch (Throwable t) {
-			this.psupplier = new IPersistenceSupplier() {
+			this.psupplier = new ReadData() {
 
 				@Override
 				public List<IDictionary<KeyValuePair<String, String>, Integer>> readStatistics() {
@@ -87,7 +88,7 @@ public class CountingSystem {
 		List<KeyValuePair<String, Integer>> votos = psupplier.readResults();
 		
 		IDictionary<String, Integer> result = ctype.count(votos);
-		SQLServerBridge.sendVoteCount(result);
+		new SQLServerBridge().sendVoteCount(result);
 		
 		return this;
 	}

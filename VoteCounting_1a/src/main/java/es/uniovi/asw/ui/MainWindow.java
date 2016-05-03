@@ -13,10 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import es.uniovi.asw.bussines.CountingSystem;
-import es.uniovi.asw.bussines.DirectCountType;
-import es.uniovi.asw.bussines.StandardStatisticType;
 import es.uniovi.asw.bussines.StatisticsSystem;
-import es.uniovi.asw.persistence.JdbcPersistenceSupplier;
+import es.uniovi.asw.bussines.implCountType.DirectCountType;
+import es.uniovi.asw.bussines.implStatistic.StandardStatisticType;
+import es.uniovi.asw.persistence.impl.ReadDataP;
 import threading.Task;
 
 public class MainWindow extends JFrame {
@@ -63,8 +63,8 @@ public class MainWindow extends JFrame {
 					@Override
 					public void run() {
 						new Task(() -> {
-							new CountingSystem(new DirectCountType(), new JdbcPersistenceSupplier()).count();
-							new StatisticsSystem(new StandardStatisticType(), new JdbcPersistenceSupplier())
+							new CountingSystem(new DirectCountType(), new ReadDataP()).count();
+							new StatisticsSystem(new StandardStatisticType(), new ReadDataP())
 									.getEstadisticas().getParticipacion();
 						}).start();
 					}

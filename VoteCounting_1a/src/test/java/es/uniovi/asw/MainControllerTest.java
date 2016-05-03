@@ -23,10 +23,10 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import es.uniovi.asw.bussines.CountingSystem;
-import es.uniovi.asw.bussines.DirectCountType;
-import es.uniovi.asw.bussines.StandardStatisticType;
 import es.uniovi.asw.bussines.StatisticsSystem;
-import es.uniovi.asw.persistence.JdbcPersistenceSupplier;
+import es.uniovi.asw.bussines.implCountType.DirectCountType;
+import es.uniovi.asw.bussines.implStatistic.StandardStatisticType;
+import es.uniovi.asw.persistence.impl.ReadDataP;
 import util.IDictionary;
 import util.KeyValuePair;
 
@@ -71,7 +71,7 @@ public class MainControllerTest {
 	@Test
 	public void testNumeroVotos(){
 		try{
-		CountingSystem sc = new CountingSystem(new DirectCountType(), new JdbcPersistenceSupplier());
+		CountingSystem sc = new CountingSystem(new DirectCountType(), new ReadDataP());
 		/*IDictionary<String, Integer> votos =*/ sc.count();
 //		int votosSi = votos.stream().filter(kvp -> kvp.key.equals("SI")).findFirst().get().value ;
 //		int votosNo = votos.stream().filter(kvp -> kvp.key.equals("NO")).findFirst().get().value;
@@ -87,7 +87,7 @@ public class MainControllerTest {
 	//Test que comprueba que se obtiene correctamente el porcentaje de participación de la BBDD
 	@Test
 	public void porcentajeParticipacion(){
-		StatisticsSystem ss = new StatisticsSystem(new StandardStatisticType(), new JdbcPersistenceSupplier());
+		StatisticsSystem ss = new StatisticsSystem(new StandardStatisticType(), new ReadDataP());
 //		assertTrue(ss.getParticipacion() == 100||true);
 		assertTrue(true);
 	}
@@ -96,7 +96,7 @@ public class MainControllerTest {
 	@Test
 	public void votacionPorCiudad(){
 		
-		StatisticsSystem ss = new StatisticsSystem(new StandardStatisticType(), new JdbcPersistenceSupplier());
+		StatisticsSystem ss = new StatisticsSystem(new StandardStatisticType(), new ReadDataP());
 		
 		/*List<IDictionary<KeyValuePair<String, String>, Integer>> cosas =*/ ss.getEstadisticas();
 		

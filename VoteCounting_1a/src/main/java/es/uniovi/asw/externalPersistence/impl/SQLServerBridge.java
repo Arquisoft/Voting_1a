@@ -1,10 +1,11 @@
-package es.uniovi.asw.persistence;
+package es.uniovi.asw.externalPersistence.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.List;
 
+import es.uniovi.asw.externalPersistence.Bridge;
 import util.IDictionary;
 import util.KeyValuePair;
 
@@ -13,10 +14,10 @@ import util.KeyValuePair;
  * en Azure que será utilizada por la vista web del sistema de
  * publicación según el plan ASWneo
  */
-public class SQLServerBridge {
+public class SQLServerBridge implements Bridge{
 	private static String url = "jdbc:sqlserver://aswneo.database.windows.net:1433;database=ASWneo;user=carlubian@aswneo;password=H3lloKitty;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
 	
-	private SQLServerBridge() {}
+	public SQLServerBridge() {}
 	
 	static {}
 	
@@ -24,7 +25,7 @@ public class SQLServerBridge {
 	 * Envía el recuento de votos a SQL Server
 	 * @param count Recuento de votos
 	 */
-	public static void sendVoteCount(IDictionary<String, Integer> count) {
+	public  void sendVoteCount(IDictionary<String, Integer> count) {
 		try {
 			Connection con = DriverManager.getConnection(url);
 			System.out.println("Ala conectao");
@@ -51,7 +52,7 @@ public class SQLServerBridge {
 	 * Envía el índice de participación a SQL Server
 	 * @param indice Índice de participación
 	 */
-	public static void sendParticipation(int indice) {
+	public  void sendParticipation(int indice) {
 		try {
 			Connection con = DriverManager.getConnection(url);
 			PreparedStatement st = con.prepareStatement("DELETE FROM Participacion");
@@ -74,7 +75,7 @@ public class SQLServerBridge {
 	 * Envía las estadísticas a SQL Server
 	 * @param cosas Estadísticas
 	 */
-	public static void sendStatistics(List<IDictionary<KeyValuePair<String, String>, Integer>> cosas) {
+	public  void sendStatistics(List<IDictionary<KeyValuePair<String, String>, Integer>> cosas) {
 		try {
 			Connection con = DriverManager.getConnection(url);
 			PreparedStatement st = con.prepareStatement("DELETE FROM Estadisticas");

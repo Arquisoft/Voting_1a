@@ -1,16 +1,20 @@
-package es.uniovi.asw.persistence;
+package es.uniovi.asw.persistence.impl;
 
 import java.sql.*;
 import java.util.ArrayList;
+
 import util.Dictionary;
 import util.IDictionary;
+
 import java.util.List;
+
+import es.uniovi.asw.persistence.ReadData;
 import util.KeyValuePair;
 
-public class JdbcPersistenceSupplier implements IPersistenceSupplier {
+public class ReadDataP implements ReadData {
 	private Connection conexion;
 
-	public JdbcPersistenceSupplier() {
+	public ReadDataP() {
 		try {
 			conexion = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost", "SA", "");
 		} catch (SQLException e) {

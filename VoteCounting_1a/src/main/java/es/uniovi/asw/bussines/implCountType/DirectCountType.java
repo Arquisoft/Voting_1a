@@ -1,7 +1,8 @@
-package es.uniovi.asw.bussines;
+package es.uniovi.asw.bussines.implCountType;
 
 import java.util.List;
 
+import es.uniovi.asw.bussines.ICountType;
 import util.Dictionary;
 import util.IDictionary;
 import util.KeyValuePair;
