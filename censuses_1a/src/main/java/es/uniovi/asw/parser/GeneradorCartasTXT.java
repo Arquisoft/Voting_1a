@@ -11,7 +11,7 @@ public class GeneradorCartasTXT implements GeneradorCartas{
 
 	
 	@Override
-	public String generarCarta(String nombre,String email) {
+	public String generarCarta(String nombre,String NIF,String email) {
 				
 		String contraseña = GeneradorPasswords.getGeneradorPasswords().generarContraseña();
 		
@@ -20,7 +20,7 @@ public class GeneradorCartasTXT implements GeneradorCartas{
 		
 		try {
 			bW = new BufferedWriter(new FileWriter(file));
-			bW.write("Le comunicamos que ha sido añadido al censo electoral "
+			bW.write("Le comunicamos al usuario con DNI "+NIF+" ,que ha sido añadido al censo electoral "
 					+ "y puede entrar en su cuenta con la siguiente"
 					+ " información:\n\tUsuario: "+email+"\n\tContraseña: "
 					+contraseña);

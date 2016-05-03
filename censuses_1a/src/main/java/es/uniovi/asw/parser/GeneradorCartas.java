@@ -11,9 +11,10 @@ public interface GeneradorCartas {
 	 * Devuelve la clave generada
 	 * 
 	 * @param nombre
-	 * @param email
+	 * @param NIF
+	 * @param email 
 	 * @return
 	 */
-	public String generarCarta(String nombre,String email);
+	public String generarCarta(String nombre,String NIF, String email);
 
 }

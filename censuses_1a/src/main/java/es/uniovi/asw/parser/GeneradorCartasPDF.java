@@ -14,7 +14,7 @@ import es.uniovi.asw.util.GeneradorPasswords;
 public class GeneradorCartasPDF implements GeneradorCartas {
 
 	@Override
-	public String generarCarta(String nombre, String email) {
+	public String generarCarta(String nombre,String NIF ,String email) {
 		
 		String contraseña = GeneradorPasswords.getGeneradorPasswords().generarContraseña();
 		
@@ -30,7 +30,7 @@ public class GeneradorCartasPDF implements GeneradorCartas {
 		      Document documento = new Document();
 		      PdfWriter.getInstance(documento, archivo);
 		      documento.open();
-		      documento.add(new Paragraph("Le comunicamos que ha sido añadido al censo electoral "
+		      documento.add(new Paragraph("Le comunicamos al usuario con DNI "+NIF+", que ha sido añadido al censo electoral "
 						+ "y puede entrar en su cuenta con la siguiente"
 						+ " información:"));
 		      

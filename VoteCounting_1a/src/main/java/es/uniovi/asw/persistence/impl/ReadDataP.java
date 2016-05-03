@@ -32,7 +32,7 @@ public class ReadDataP implements ReadData {
 			while (rs.next()) {
 				String opcion = rs.getString(1);
 				int numVotos = rs.getInt(2);
-
+		
 				lista.add(new KeyValuePair<>(opcion, numVotos));
 			}
 
