@@ -9,7 +9,7 @@ import javax.persistence.Table;
 public class Votante {
 
 	@Id
-	public String dni;
+	private String dni;
 
 	public Votante() {
 
