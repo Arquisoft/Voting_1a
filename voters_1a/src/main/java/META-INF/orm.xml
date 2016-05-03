@@ -11,7 +11,7 @@
 	</named-query>
 	 
 	<named-query name="UserInfo.login">
-		<query>select u from UserInfo u where u.email = ?1 and u.contraseña = ?2</query>
+		<query>select u from UserInfo u where u.email = ?1 and u.password = ?2</query>
 	</named-query>
 
 	

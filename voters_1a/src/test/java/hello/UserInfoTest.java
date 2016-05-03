@@ -9,8 +9,8 @@ public class UserInfoTest {
 	@Test
 	public void testUserInfo() throws Exception {
 		UserInfo user = new UserInfo("user", "12563498K", "user@mail.com", 45, "user1");
-		user.setContraseña("cambio");
-		assertTrue(user.getContraseña().equals("cambio"));
+		user.setPassword("cambio");
+		assertTrue(user.getPassword().equals("cambio"));
 		user.setNIF("33");
 		assertFalse(user.getNIF().equals("33"));
 		assertTrue(user.getNIF().equals("12563498K"));

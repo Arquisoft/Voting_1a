@@ -21,18 +21,18 @@ public class UserInfo {
 	private String nif;
 	private String email;
 	private int codigoMesa;
-	private String contraseña;
+	private String password;
 
 	UserInfo() {
 
 	}
 
-	public UserInfo(String name, String NIF, String email, int codigoMesa,String contraseña) {
+	public UserInfo(String name, String NIF, String email, int codigoMesa,String password) {
 		this.setName(name);
 		this.setNIF(NIF);
 		this.email = email;
 		this.setCodigoMesa(codigoMesa);
-		this.setContraseña(contraseña);
+		this.setPassword(password);
 	}
 
 	public String getName() {
@@ -100,19 +100,19 @@ public class UserInfo {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", NIF=" + nif + ", email=" + email + ", codigoMesa=" + codigoMesa
-				+ ", contraseña=" + contraseña + "]";
+				+ ", password" + password + "]";
 	}
 
 	public Long getId(){
 		return id;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public boolean nifValido(String nif){
