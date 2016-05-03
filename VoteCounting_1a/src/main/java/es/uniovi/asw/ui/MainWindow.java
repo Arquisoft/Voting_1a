@@ -58,16 +58,15 @@ public class MainWindow extends JFrame {
 		JButton btnIniciarRecuento = new JButton("Iniciar recuento");
 		btnIniciarRecuento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-						iniciarRecuento();
-					}
-				}, 0, 60, TimeUnit.SECONDS);
-
+				iniciarRecuento();
 			}
+
+
 		});
 		contentPane.add(btnIniciarRecuento, BorderLayout.CENTER);
 	}
 	
-	private void iniciarRecuento(){
+	private void iniciarRecuento() {
 		new ScheduledThreadPoolExecutor(2).scheduleWithFixedDelay(new Runnable() {
 
 			@Override
@@ -75,7 +74,11 @@ public class MainWindow extends JFrame {
 				new Task(() -> {
 					new CountingSystem(new DirectCountType(), new ReadDataP()).count();
 					new StatisticsSystem(new StandardStatisticType(), new ReadDataP())
-							.getEstadisticas().getParticipacion();
-				}).start();
-
+					.getEstadisticas().getParticipacion();
+				})
+				.start();
+			}
+			
+		}, 0, 60, TimeUnit.SECONDS);
+	}
 }
