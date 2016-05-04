@@ -23,7 +23,9 @@ Generar cartas en formato pdf obteniendo los datos de xls: <b>java -jar target/c
 
 ## Voters
 
-Para ejecutar voters, siga las siguientes instrucciones:
+Voters es una aplicación Spring-Boot que comprueba las credenciales de los votantes y les indica en qué mesa electoral deben votar.
+
+Para ejecutar Voters, siga las siguientes instrucciones:
  * Ejecutar la clase Application, que se encuentra en el paquete main.java.asw
  * Abrir el archivo index.html, que se encuentra en src/main/java/asw/html, en Internet Explorer o Safari
  * Introducir un correo electrónico y una contraseña válidos en los campos de texto correspondientes
@@ -62,7 +64,11 @@ En el siguiente <a href="https://saucelabs.com/u/carlvilla?auth=0233acf3-4700-42
 
 ## VoteCounting
 
-Para ejecutar votecounting siga las siguientes instrucciones:
+VoteCounting es el sistema encargado de procesar y publicar los resultados de las votaciones. Está separado en dos módulos:
+ * El sistema de recuento, una aplicación Swing de Java
+ * El sistema de publicación, una página web ASP.NET
+
+Para ejecutar VoteCounting siga las siguientes instrucciones:
  * Ejecutar la clase MainWindow, que se encuentra en el paquete main.java.es.uniovi.asw.ui, que mostrará una interfaz gráfica
  * Pulsar el botón 'Iniciar recuento'
  * Dirigirse a la página http://aswneo.azurewebsites.net para ver los resultados y las estadísticas de la votación
