@@ -1,4 +1,4 @@
-package hello;
+package asw.model;
 
 public class Peticion {
 	private String email, password;
