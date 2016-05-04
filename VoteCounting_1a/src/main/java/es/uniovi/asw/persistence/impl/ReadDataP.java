@@ -26,7 +26,7 @@ public class ReadDataP implements ReadData {
 	public List<KeyValuePair<String, Integer>> readResults() {
 		try {
 			Statement st = conexion.createStatement();
-			ResultSet rs = st.executeQuery("select o.opcion, sum(numvotos) from tvotos v , topciones o where v.idopcion = o.id group by o.opcion;");
+			ResultSet rs = st.executeQuery("select o.nombre, sum(numero) from tvotes v , topciones o where v.opcion = o.nombre group by o.nombre;");
 			List<KeyValuePair<String, Integer>> lista = new ArrayList<>();
 
 			while (rs.next()) {
@@ -46,8 +46,8 @@ public class ReadDataP implements ReadData {
 	public List<IDictionary<KeyValuePair<String, String>, Integer>> readStatistics() {
 		try {
 			Statement st = conexion.createStatement();
-			ResultSet rs = st.executeQuery("select o.opcion , l.ciudad , v.numvotos"
-					+ " from TOPCIONES o , TVOTOS v , TLUGARES l" + " where o.id = v.idopcion and v.idlugar = l.id;");
+			ResultSet rs = st.executeQuery("select o.nombre , l.ciudad , v.numero from "
+					+ "TOPCIONES o , TVOTES v , TPLACES l where o.nombre = v.opcion and v.lugar = l.id;");
 			List<IDictionary<KeyValuePair<String, String>, Integer>> estadisticas = new ArrayList<>();
 			while (rs.next()) {
 				String opcion = rs.getString(1);
