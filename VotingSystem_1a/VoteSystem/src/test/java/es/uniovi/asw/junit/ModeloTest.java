@@ -42,7 +42,7 @@ public class ModeloTest {
 	public void testLugarVoto() {
 		LugarVoto lugar = new LugarVoto(1,"colegio","Xvdimast7","Oviedo","España");
 		assertEquals(lugar.getCiudad(),"Oviedo");
-		assertEquals(lugar.getContraseña(),"Xvdimast7");
+		assertEquals(lugar.getPassword(),"Xvdimast7");
 		assertEquals(lugar.getPais(),"España");
 		assertEquals(lugar.getId(),1);
 		assertEquals(lugar.getNombre(),"colegio");
@@ -53,7 +53,7 @@ public class ModeloTest {
 		lugar2.setPais("Spain");
 		lugar2.setId(2);
 		lugar2.setNombre("colegio2");
-		lugar2.setContraseña("jbfd98");
+		lugar2.setPassword("jbfd98");
 			
 		assertFalse(lugar.equals(lugar2));
 		assertTrue(lugar.equals(lugar));

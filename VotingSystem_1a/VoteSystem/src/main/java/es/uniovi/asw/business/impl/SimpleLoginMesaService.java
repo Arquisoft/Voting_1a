@@ -31,9 +31,9 @@ public class SimpleLoginMesaService implements LoginMesaService {
 
 		if (lugar == null)
 			return false;
-		if (lugar.getContraseña().compareTo(password) == 0) {
-			// Ocultamos la contraseña
-			lugar.setContraseña("null");
+		if (lugar.getPassword().compareTo(password) == 0) {
+			// Ocultamos la password
+			lugar.setPassword("null");
 			return true;
 
 		}
