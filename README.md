@@ -23,7 +23,12 @@ Generar cartas en formato pdf obteniendo los datos de xls: <b>java -jar target/c
 
 ## Voters
 
-Para ejecutar voters blablabla...
+Para ejecutar voters, siga las siguientes instrucciones:
+ * Ejecutar la clase Application, que se encuentra en el paquete main.java.asw
+ * Abrir el archivo index.html, que se encuentra en src/main/java/asw/html, en Internet Explorer o Safari
+ * Introducir un correo electrónico y una contraseña válidos en los campos de texto correspondientes
+ * Pulsar el botón 'Comprobar datos'
+ * Si los datos instroducidos son correctos, bajo el botón aparecerán unas líneas de texto con los datos del usuario. Si los datos no fueran correctos, aparecerá un mensaje de error en el mismo lugar.
 
 ## VotingSystem
 
@@ -57,7 +62,10 @@ En el siguiente <a href="https://saucelabs.com/u/carlvilla?auth=0233acf3-4700-42
 
 ## VoteCounting
 
-Para ejecutar votevounting blablabla...
+Para ejecutar votecounting siga las siguientes instrucciones:
+ * Ejecutar la clase MainWindow, que se encuentra en el paquete main.java.es.uniovi.asw.ui, que mostrará una interfaz gráfica
+ * Pulsar el botón 'Iniciar recuento'
+ * Dirigirse a la página http://aswneo.azurewebsites.net para ver los resultados y las estadísticas de la votación
 
 
 ## Base de datos
